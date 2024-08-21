@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  nodejs:
+    build: .
+    container_name: node_js
+    ports:
+      - "3000:3000"
+
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb_password
+      MYSQL_DATABASE: mariadb_db
+      MYSQL_USER: mariadb_user
+      MYSQL_PASSWORD: mariadb_user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  phpmyadmin_mariadb:
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: mariadb
+      MYSQL_ROOT_PASSWORD: mariadb_password
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+
+  mysql:
+    image: mysql:9
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql_password
+      MYSQL_DATABASE: mysql_db
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_user_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin_mysql:
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: mysql_password
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mariadb_data:
+  mysql_data:

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Tentang Kami</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://codingcollective.com/wp-content/uploads/2021/12/cropped-iconCo2-32x32.png">
+</head>
+<body>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+          <!-- Logo Section -->
+          <div class="text-white text-2xl font-bold">
+            Awesome Website 😎😆😁
+          </div>
+    
+          <!-- Hamburger Button for Mobile -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+    
+          <!-- Navbar Links Section -->
+          <ul id="menu" class="hidden md:flex space-x-4">
+            <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
+            <li><a href="/about" class="text-white hover:text-gray-300">About</a></li>
+            <li><a href="/services" class="text-white hover:text-gray-300">Services</a></li>
+            <li><a href="/contact" class="text-white hover:text-gray-300">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+          <ul class="flex flex-col space-y-2 mt-4">
+            <li><a href="/" class="text-white hover:text-gray-300 block text-center">Home</a></li>
+            <li><a href="/about" class="text-white hover:text-gray-300 block text-center">About</a></li>
+            <li><a href="/services" class="text-white hover:text-gray-300 block text-center">Services</a></li>
+            <li><a href="/contact" class="text-white hover:text-gray-300 block text-center">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <h1 class="text-3xl font-bold flex mt-3 justify-center items-center">Contact Kami!</h1>
+      <div class="flex justify-center items-center h-screen">
+        <img class="w-2/6 h-2/6" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTu5fTRZu49YmGXPp5D1yAk8Z6MLJsqfYU2ss69xIGJrnMT8kkMjJlPVph4PwJaR0JaC0&usqp=CAU" alt="">
+      </div>
+
+      <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      </script>
+</body>
+</html>

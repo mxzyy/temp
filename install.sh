@@ -38,6 +38,8 @@ htpasswd -cb /etc/nginx/.htpasswd admin nimda
 
 # Nginx Conf
 sudo mv nginx.conf /etc/nginx/sites-available/default
+sudo mv app/public/404.html /var/www/html
+sudo mv app/public/403.html /var/www/html
 sudo service nginx restart
 
 sudo mkdir /var/www/html/test

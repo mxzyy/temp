@@ -38,8 +38,10 @@ htpasswd -cb /etc/nginx/.htpasswd admin nimda
 
 # Nginx Conf
 sudo mv nginx.conf /etc/nginx/sites-available/default
-sudo wget -q -P /var/www/html https://raw.githubusercontent.com/mxzyy/temp/main/app/public/404.html
-sudo wget -q -P /var/www/html https://raw.githubusercontent.com/mxzyy/temp/main/app/public/403.html
+sudo wget -q https://raw.githubusercontent.com/mxzyy/temp/main/app/public/404.html
+sudo mv 404.html /var/www/html
+sudo wget -q https://raw.githubusercontent.com/mxzyy/temp/main/app/public/403.html
+sudo mv 403.html /var/www/html
 sudo service nginx restart
 
 sudo mkdir /var/www/html/test
